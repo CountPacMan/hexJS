@@ -1,25 +1,21 @@
-describe('getWordOrder', function() {
+describe('getDecimal', function() {
   it("returns 0 for input of 0", function() {
-    expect(binaryTranslator('0')).to.equal(0);
+    expect(getDecimal('0')).to.equal(0);
   });
 
-  it("returns 1 for input of 1", function() {
-    expect(binaryTranslator('1')).to.equal(1);
+  it("returns 7 for input of 7", function() {
+    expect(getDecimal('7')).to.equal(7);
   });
 
-  it("returns 2 for input of 10", function() {
-    expect(binaryTranslator('10')).to.equal(2);
+  it("returns 11 for input of b", function() {
+    expect(getDecimal('b')).to.equal(11);
   });
 
-  it("returns 3 for input of 11", function() {
-    expect(binaryTranslator('11')).to.equal(3);
+  it("returns 323 for input of 143", function() {
+    expect(getDecimal('143')).to.equal(323);
   });
 
-  it("returns 4 for input of 100", function() {
-    expect(binaryTranslator('100')).to.equal(4);
-  });
-
-  it("returns 9 for input of 1001", function() {
-    expect(binaryTranslator('1001')).to.equal(9);
+  it("returns 21432 for input of 53b8", function() {
+    expect(getDecimal('53b8')).to.equal(21432);
   });
 });
