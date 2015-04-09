@@ -1,22 +1,23 @@
 function binaryTranslator(binary) {
   var decimal = 0;
-  var values = 2;
-  for (var i = binary.length - 1; i >= 0; i--) {
-    decimal = parseInt(binary[i]);
-    values *= 2;
+
+  for (var i = 0; i < binary.length; i++) {
+    decimal *= 2;
+    decimal += parseInt(binary[i]);
   }
-
-
-
 
   return decimal;
 }
 
 
 jQuery(document).ready(function() {
-  $("#words").focus();
-  $("#word-order").submit(function(event) {
+  $("#binary").focus();
+  $("#binary-form").submit(function(event) {
 
+    var binary = $("#binary").val();
+    var decimal = binaryTranslator(binary);
+
+    $("#decimal").text(decimal);
     $("#result").show();
     event.preventDefault();
   });
